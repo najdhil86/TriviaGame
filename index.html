@@ -17,60 +17,66 @@
     
 
     <div class="container">
+        <div id="startbutton">
+            <div class="row">
+                <h1>NBA Trivia Time !</h1>
+            </div> 
 
-        <div class="row">
-            <h1>NBA Trivia Time !</h1>
-        </div> 
+          <div class="row">
+              <h3>Let's see how well you know the NBA</h3>
+          </div>
 
-      <div class="row">
-          <h3>Let's see how well you know the NBA</h3>
-      </div>
-
-      <div class="row">
-        <button id="start">Start</button>
-      </div>
+          <div class="row">
+            <button id="start">Start</button>
+          </div>
+        </div>
         
       <div class="row" id="FormAndTimer">
 
-          <div id="timer"></div>
+          <p id="timer"></p>
 
-          <form>
+          <div id="mainform">
 
-              <p>Where Did LeBron James Play College Basketball:</p>
-  
-              <input type="radio" name="lebron" value="Duke" id="duke"> <label for="duke">Duke</label><br>
-  
-              <input type="radio" name="lebron" value="ohio" id="ohio"> <label for="ohio">Ohio State</label><br>
-  
-              <input type="radio" name="lebron" value="michigan" id="michigan"> <label for="michigan">Michigan State</label><br>
-  
-              <input type="radio" name="lebron" value="correct" id="none"> <label for="none">None of the above</label><br>
-  
-            
-              <p>Which Team Drafted Andrew Wiggins?</p>
-  
-              <input type="radio" name="wiggins" value="timberwolves" id="timberwolves"> <label for="timberwolves">Timberwolves</label><br>
-  
-              <input type="radio" name="wiggins" value="raptors" id="raptors"> <label for="raptors">Toronto Raptors</label><br>
-  
-              <input type="radio" name="wiggins" value="cavaliers" id="cavaliers"> <label for="cavaliers">Cleveland Cavaliers</label><br>
-  
-              <input type="radio" name="wiggins" value="none" id="none"> <label for="none">None of the above</label><br>
-  
-              <p>Who won the NBA Championship in 2018?</p>
-  
-              <input type="radio" name="champ" value="correct" id="dubs"> <label for="dubs">Golden State Warriors</label><br>
-  
-              <input type="radio" name="champ" value="suns" id="suns"> <label for="suns">Suns</label><br>
-  
-              <input type="radio" name="champ" value="correct" id="cav"> <label for="cav">Cavaliers</label><br>
-  
-              <input type="radio" name="champ" value="none" id="none"> <label for="none">None of the above</label><br>
-            
-              <!-- Submit Button -->
-              <input type="submit" value="Submit">
-  
-          </form>
+
+            <br><form>
+
+                <p>Where Did LeBron James Play College Basketball:</p>
+    
+                <input type="radio" name="lebron" value="Duke" id="duke"> <label for="duke">Duke</label><br>
+    
+                <input type="radio" name="lebron" value="ohio" id="ohio"> <label for="ohio">Ohio State</label><br>
+    
+                <input type="radio" name="lebron" value="michigan" id="michigan"> <label for="michigan">Michigan State</label><br>
+    
+                <input type="radio" name="lebron" value="correct" id="none"> <label for="none">None of the above</label><br>
+    
+              
+                <p>Which Team Drafted Andrew Wiggins?</p>
+    
+                <input type="radio" name="wiggins" value="timberwolves" id="timberwolves"> <label for="timberwolves">Timberwolves</label><br>
+    
+                <input type="radio" name="wiggins" value="raptors" id="raptors"> <label for="raptors">Toronto Raptors</label><br>
+    
+                <input type="radio" name="wiggins" value="cavaliers" id="cavaliers"> <label for="cavaliers">Cleveland Cavaliers</label><br>
+    
+                <input type="radio" name="wiggins" value="none" id="none"> <label for="none">None of the above</label><br>
+    
+                <p>Who won the NBA Championship in 2018?</p>
+    
+                <input type="radio" name="champ" value="correct" id="dubs"> <label for="dubs">Golden State Warriors</label><br>
+    
+                <input type="radio" name="champ" value="suns" id="suns"> <label for="suns">Suns</label><br>
+    
+                <input type="radio" name="champ" value="correct" id="cav"> <label for="cav">Cavaliers</label><br>
+    
+                <input type="radio" name="champ" value="none" id="none"> <label for="none">None of the above</label><br>
+              
+                <!-- Submit Button -->
+                <input type="submit" value="Submit">
+    
+            </form>
+
+          </div>
 
 
       </div>
@@ -86,13 +92,18 @@
 
     <script>
 
+      $('#mainform').hide();
+      $('#startbutton').show();
       
       
 
 
       $('#start').on('click', function(){
 
-        $('#FormAndTimer').show();
+        $('#mainform').show();
+        
+        $('#startbutton').hide();
+
 
         var counter = 100;
       
@@ -114,7 +125,39 @@
         var timer = setInterval(decreaseTimer, 1*1000);
         
         $('#timer').text(counter);
+
+        
       })
+
+        
+        $("input[type='submit']").on('click', function(){
+
+        var correctans = 0;
+
+        var incorrectans = 0;
+
+        var answer1 = $("input[name='lebron']:checked").val();
+        
+        function isItCorrect(a) {
+
+          if (a == 'correct' ) {
+
+          correctans ++;
+          console.log("Correct value " + correctans);
+           debugger;
+          } else  {
+
+            incorrectans ++;
+            console.log("Incorrect value " + incorrectans);
+            debugger;
+          }
+          incorrectans(answer1);
+
+        }
+
+      })
+
+        
 
     </script>
 
