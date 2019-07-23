@@ -10,17 +10,111 @@
 
     <title>NBA Trivia</title>
   </head>
-  <body>
-    <h1>Trivia Time !</h1>
-    <h3>Let's see how well you know the NBA</h3>
 
-    <button id="start">Start</button>
+  <body>
+
+    
+    
+
+    <div class="container">
+
+        <div class="row">
+            <h1>NBA Trivia Time !</h1>
+        </div> 
+
+      <div class="row">
+          <h3>Let's see how well you know the NBA</h3>
+      </div>
+
+      <div class="row">
+        <button id="start">Start</button>
+      </div>
+        
+      <div class="row">
+
+          <div id="timer"></div>
+
+          <form>
+
+              <p>Where Did LeBron James Play College Basketball:</p>
+  
+              <input type="radio" name="lebron" value="Duke" id="duke"> <label for="duke">Duke</label><br>
+  
+              <input type="radio" name="lebron" value="ohio" id="ohio"> <label for="ohio">Ohio State</label><br>
+  
+              <input type="radio" name="lebron" value="michigan" id="michigan"> <label for="michigan">Michigan State</label><br>
+  
+              <input type="radio" name="lebron" value="correct" id="none"> <label for="none">None of the above</label><br>
+  
+            
+              <p>Which Team Drafted Andrew Wiggins?</p>
+  
+              <input type="radio" name="wiggins" value="timberwolves" id="timberwolves"> <label for="timberwolves">Timberwolves</label><br>
+  
+              <input type="radio" name="wiggins" value="raptors" id="raptors"> <label for="raptors">Toronto Raptors</label><br>
+  
+              <input type="radio" name="wiggins" value="cavaliers" id="cavaliers"> <label for="cavaliers">Cleveland Cavaliers</label><br>
+  
+              <input type="radio" name="wiggins" value="none" id="none"> <label for="none">None of the above</label><br>
+  
+              <p>Who won the NBA Championship in 2018?</p>
+  
+              <input type="radio" name="champ" value="correct" id="dubs"> <label for="dubs">Golden State Warriors</label><br>
+  
+              <input type="radio" name="champ" value="suns" id="suns"> <label for="suns">Suns</label><br>
+  
+              <input type="radio" name="champ" value="correct" id="cav"> <label for="cav">Cavaliers</label><br>
+  
+              <input type="radio" name="champ" value="none" id="none"> <label for="none">None of the above</label><br>
+            
+              <!-- Submit Button -->
+              <input type="submit" value="Submit">
+  
+          </form>
+
+
+      </div>
+        
+    </div>
+
+    <!-- <button id="submit">Submit</button> -->
 
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+
+      
+      
+
+
+      $('#start').on('click', function(){
+
+        var counter = 100;
+      
+        $('#timer').text(counter);
+      
+        function decreaseTimer(){
+        
+          counter -= 1;
+          $('#timer').text(counter);
+
+          if (counter == 0){
+
+          $("input[type='submit']").attr('disabled', true);
+          clearInterval(timer);
+          }
+        
+        }
+
+        var timer = setInterval(decreaseTimer, 1*1000);
+        
+        $('#timer').text(counter);
+      })
+
+    </script>
+
   </body>
 </html>
