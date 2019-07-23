@@ -17,6 +17,7 @@
     
 
     <div class="container">
+
         <div id="startbutton">
             <div class="row">
                 <h1>NBA Trivia Time !</h1>
@@ -29,16 +30,17 @@
           <div class="row">
             <button id="start">Start</button>
           </div>
+
         </div>
         
-      <div class="row" id="FormAndTimer">
-
-          <p id="timer"></p>
+      <div class="row">
 
           <div id="mainform">
 
+            <p id="timer"></p>
 
-            <br><form>
+
+            <form>
 
                 <p>Where Did LeBron James Play College Basketball:</p>
     
@@ -76,6 +78,16 @@
     
             </form>
 
+          <div id="overallresults">
+
+            <p>Time Over!!</p>
+
+            <p>Correct Answer: <span id="right"></span></p>
+            <p>Incorrect Answer: <span id="wrong"></span></p>
+            <p>Unanswered Questions: <span id="unans"></span></p>
+
+          </div>
+
           </div>
 
 
@@ -92,13 +104,17 @@
 
     <script>
 
+      //Showing and hiding the three main sections: Start Content, Main Content, and Overall Results Content
+
       $('#mainform').hide();
       $('#startbutton').show();
+      // $('#overallresults').hide();
+
       
       
 
 
-      $('#start').on('click', function(){
+       $('#start').on('click', function(){
 
         $('#mainform').show();
         
@@ -129,14 +145,35 @@
         
       })
 
-        
-        $("input[type='submit']").on('click', function(){
+        //Setting correct answers, incorrect answers, and unanswered answers variables
 
         var correctans = 0;
+        var rightAns = $('#right').text(correctans);
 
         var incorrectans = 0;
+        var wrongAns = $('#wrong').text(incorrectans);
+        
+      //Submit button functionality. What happens when you press the submit button
 
+      $("input[type='submit']").on('click', function(){
+
+        var correctans = 0;
+        var rightAns = $('#right').text(correctans);
+        
+
+        var incorrectans = 0;
+        var wrongAns = $('#wrong').text(incorrectans);
+
+
+        // Setting Variable for answer from all questions
+        
         var answer1 = $("input[name='lebron']:checked").val();
+
+        var answer2 = $("input[name='wiggins']:checked").val();
+
+        var answer3 = $("input[name='champ']:checked").val();
+
+        var cAnsDisplay = $('')
         
         function isItCorrect(a) {
 
@@ -144,18 +181,34 @@
 
           correctans ++;
           console.log("Correct value " + correctans);
-           debugger;
+          rightAns = $('#right').text(correctans);
+          //  debugger;
           } else  {
 
             incorrectans ++;
             console.log("Incorrect value " + incorrectans);
-            debugger;
+            wrongAns = $('#wrong').text(incorrectans);
+            // debugger;
           }
-          incorrectans(answer1);
 
+          
         }
 
+        //Checking what are the right answers
+
+        isItCorrect(answer1);
+        isItCorrect(answer2);
+        isItCorrect(answer3);
+
+        //Show Overall results, Hide the two other sections
+        
+        
+
+        event.preventDefault();
       })
+
+      
+      
 
         
 
