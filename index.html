@@ -7,37 +7,43 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+
 
     <title>NBA Trivia</title>
+
   </head>
 
   <body>
 
-    
-    
-
     <div class="container">
 
         <div id="startbutton">
-            <div class="row">
-                <h1>NBA Trivia Time !</h1>
+            <div class="row justify-content-md-center">
+                <h1 id="title">NBA Trivia Time !</h1>
             </div> 
 
-          <div class="row">
-              <h3>Let's see how well you know the NBA</h3>
+          <div class="row justify-content-md-center">
+              <h3 id="secondheader">Let's see how well you know the NBA</h3>
           </div>
 
-          <div class="row">
-            <button id="start">Start</button>
+          <div class="row justify-content-md-center">
+              <button id="start" style="vertical-align:middle"><span>Start </span></button>
           </div>
 
         </div>
         
-      <div class="row">
+      <div class="row justify-content-md-center">
 
           <div id="mainform">
 
-            <p id="timer"></p>
+            <div class="row justify-content-md-center">
+            
+              <p id="timer"></p>
+            
+            </div>
 
 
             <form>
@@ -78,17 +84,17 @@
     
             </form>
 
+          </div>
+
           <div id="overallresults">
 
-            <p>Time Over!!</p>
-
-            <p>Correct Answer: <span id="right"></span></p>
-            <p>Incorrect Answer: <span id="wrong"></span></p>
-            <p>Unanswered Questions: <span id="unans"></span></p>
-
-          </div>
-
-          </div>
+              <p>Time Over!!</p>
+  
+              <p>Correct Answer: <span id="right"></span></p>
+              <p>Incorrect Answer: <span id="wrong"></span></p>
+              <p>Unanswered Questions: <span id="unans"></span></p>
+  
+            </div>
 
 
       </div>
@@ -102,117 +108,8 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <script>
-
-      //Showing and hiding the three main sections: Start Content, Main Content, and Overall Results Content
-
-      $('#mainform').hide();
-      $('#startbutton').show();
-      // $('#overallresults').hide();
-
-      
-      
-
-
-       $('#start').on('click', function(){
-
-        $('#mainform').show();
-        
-        $('#startbutton').hide();
-
-
-        var counter = 100;
-      
-        $('#timer').text(counter);
-      
-        function decreaseTimer(){
-        
-          counter -= 1;
-          $('#timer').text(counter);
-
-          if (counter == 0){
-
-          $("input[type='submit']").attr('disabled', true);
-          clearInterval(timer);
-          }
-        
-        }
-
-        var timer = setInterval(decreaseTimer, 1*1000);
-        
-        $('#timer').text(counter);
-
-        
-      })
-
-        //Setting correct answers, incorrect answers, and unanswered answers variables
-
-        var correctans = 0;
-        var rightAns = $('#right').text(correctans);
-
-        var incorrectans = 0;
-        var wrongAns = $('#wrong').text(incorrectans);
-        
-      //Submit button functionality. What happens when you press the submit button
-
-      $("input[type='submit']").on('click', function(){
-
-        var correctans = 0;
-        var rightAns = $('#right').text(correctans);
-        
-
-        var incorrectans = 0;
-        var wrongAns = $('#wrong').text(incorrectans);
-
-
-        // Setting Variable for answer from all questions
-        
-        var answer1 = $("input[name='lebron']:checked").val();
-
-        var answer2 = $("input[name='wiggins']:checked").val();
-
-        var answer3 = $("input[name='champ']:checked").val();
-
-        var cAnsDisplay = $('')
-        
-        function isItCorrect(a) {
-
-          if (a == 'correct' ) {
-
-          correctans ++;
-          console.log("Correct value " + correctans);
-          rightAns = $('#right').text(correctans);
-          //  debugger;
-          } else  {
-
-            incorrectans ++;
-            console.log("Incorrect value " + incorrectans);
-            wrongAns = $('#wrong').text(incorrectans);
-            // debugger;
-          }
-
-          
-        }
-
-        //Checking what are the right answers
-
-        isItCorrect(answer1);
-        isItCorrect(answer2);
-        isItCorrect(answer3);
-
-        //Show Overall results, Hide the two other sections
-        
-        
-
-        event.preventDefault();
-      })
-
-      
-      
-
-        
-
-    </script>
+    <!-- Main Game Code -->
+    <script src="assets/javascript/app.js"></script>
 
   </body>
 </html>
