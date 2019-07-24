@@ -1,13 +1,9 @@
   //Showing and hiding the three main sections: Start Content, Main Content, and Overall Results Content
 
-  $('#mainform').hide();
-  $('#startbutton').show();
-  $('#overallresults').hide();
+$('#mainform').hide();
+$('#startbutton').show();
+$('#overallresults').hide();
   
-
-  
-  
-
 
    $('#start').on('click', function(){
 
