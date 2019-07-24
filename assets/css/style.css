@@ -2,7 +2,7 @@ body {
 
     background-color: #fff1c1;
     color: #293462;
-    height: 50%;
+    /* height: 50%; */
     
 }
 .container {
@@ -23,7 +23,7 @@ body {
     margin-top: 2%;
 }
 
-#start {
+#start, #submit {
     display: inline-block;
     border-radius: 4px;
     background-color: #f76262;
@@ -66,8 +66,12 @@ body {
   }
 
 
-  #timer {
+  #timer, #timeover {
 
     font-size: 32px;
     color: #f76262;
+  }
+
+  input[type=radio]:focus {
+    border: 3px solid #555;
   }

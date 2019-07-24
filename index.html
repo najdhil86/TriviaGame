@@ -21,11 +21,15 @@
     <div class="container">
 
         <div id="startbutton">
+
             <div class="row justify-content-md-center">
+
                 <h1 id="title">NBA Trivia Time !</h1>
+                
             </div> 
 
           <div class="row justify-content-md-center">
+
               <h3 id="secondheader">Let's see how well you know the NBA</h3>
           </div>
 
@@ -41,10 +45,9 @@
 
             <div class="row justify-content-md-center">
             
-              <p id="timer"></p>
-            
-            </div>
+              <p id="timer"></p><br>
 
+            </div>
 
             <form>
 
@@ -79,27 +82,70 @@
     
                 <input type="radio" name="champ" value="none" id="none"> <label for="none">None of the above</label><br>
               
+
+                <p>What team has the most NBA Finals appearances?</p>
+    
+                <input type="radio" name="finals" value="correct" id="lakers"> <label for="lakers">Los Angeles Lakers</label><br>
+    
+                <input type="radio" name="finals" value="dubs" id="dubs"> <label for="dubs">Golden State Warriors</label><br>
+    
+                <input type="radio" name="finals" value="heat" id="heat"> <label for="heat">Miami Heat</label><br>
+    
+                <input type="radio" name="finalsnone" value="finalsnone" id="finalsnone"> <label for="finalsnone">None of the above</label><br>
+
+                <p>Who is the first player to be drafted #1 without playing college or high school basketball in the U.S.?</p>
+    
+                <input type="radio" name="ming" value="james" id="james"> <label for="james">Lebron James</label><br>
+    
+                <input type="radio" name="ming" value="bryant" id="bryant"> <label for="bryant">Kobe Bryant</label><br>
+    
+                <input type="radio" name="ming" value="correct" id="ming"> <label for="ming">Yao Ming</label><br>
+    
+                <input type="radio" name="ming" value="mingnone" id="mingnone"> <label for="mingnone">None of the above</label><br>
+
+
+                <p>Who is the tallest everyday point guard of all time?</p>
+    
+                <input type="radio" name="magic" value="james" id="james"> <label for="james">Jason Kidd</label><br>
+    
+                <input type="radio" name="magic" value="sethcurry" id="sethcurry"> <label for="sethcurry">Seth Curry</label><br>
+    
+                <input type="radio" name="magic" value="correct" id="johnson"> <label for="johnson">Magic Johnson</label><br>
+    
+                <input type="radio" name="magic" value="magicnone" id="magicnone"> <label for="magicnone">None of the above</label><br>
+
+                <p>What team has the best record in one season?</p>
+    
+                <input type="radio" name="mostwins" value="bulls" id="bulls"> <label for="bulls">Chicago Bulls</label><br>
+    
+                <input type="radio" name="mostwins" value="correct" id="dubs"> <label for="dubs">Golden State Warriors</label><br>
+    
+                <input type="radio" name="mostwins" value="celtics" id="celtics"> <label for="celtics">Boston Celtics</label><br>
+    
+                <input type="radio" name="mostwins" value="mostwinsnone" id="mostwinsnone"> <label for="mostwinsnone">None of the above</label><br>
+    
+
+              
                 <!-- Submit Button -->
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" id="submit" class="">
     
             </form>
 
-          </div>
 
+          </div>
+          
           <div id="overallresults">
 
-              <p>Time Over!!</p>
+              <h1 id="timeover">Time Over!!</p>
   
-              <p>Correct Answer: <span id="right"></span></p>
-              <p>Incorrect Answer: <span id="wrong"></span></p>
-              <p>Unanswered Questions: <span id="unans"></span></p>
+              <h4>Correct Answer: <span id="right"></span></h4>
+              <h4>Incorrect Answer: <span id="wrong"></span></h4>
+              <h4>Unanswered Questions: <span id="unans"></span></h4>
   
             </div>
 
-
-      </div>
         
-    </div>
+      </div>
 
     <!-- <button id="submit">Submit</button> -->
 
