@@ -11,6 +11,10 @@
     
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Pragati+Narrow&display=swap" rel="stylesheet">
+
+
+
 
     <title>NBA Trivia</title>
 
@@ -45,7 +49,8 @@
 
             <div class="row justify-content-md-center">
             
-              <p id="timer"></p><br>
+            
+              <div id="timertext">Time Remaining: <span id="timer"></span></div>
 
             </div>
 
@@ -87,7 +92,7 @@
     
                 <input type="radio" name="finals" value="correct" id="lakers"> <label for="lakers">Los Angeles Lakers</label><br>
     
-                <input type="radio" name="finals" value="dubs" id="dubs"> <label for="dubs">Golden State Warriors</label><br>
+                <input type="radio" name="finals" value="finalsdubs" id="finalsdubs"> <label for="finalsdubs">Golden State Warriors</label><br>
     
                 <input type="radio" name="finals" value="heat" id="heat"> <label for="heat">Miami Heat</label><br>
     
@@ -106,7 +111,7 @@
 
                 <p>Who is the tallest everyday point guard of all time?</p>
     
-                <input type="radio" name="magic" value="james" id="james"> <label for="james">Jason Kidd</label><br>
+                <input type="radio" name="magic" value="james" id="james"> <label for="kidd">Jason Kidd</label><br>
     
                 <input type="radio" name="magic" value="sethcurry" id="sethcurry"> <label for="sethcurry">Seth Curry</label><br>
     
@@ -136,13 +141,15 @@
           
           <div id="overallresults">
 
-              <h1 id="timeover">Time Over!!</p>
+              <h1 id="timeover">Game Over!!</p>
   
               <h4>Correct Answer: <span id="right"></span></h4>
               <h4>Incorrect Answer: <span id="wrong"></span></h4>
-              <h4>Unanswered Questions: <span id="unans"></span></h4>
+              <h4 id="h4uans">Unanswered Questions: <span id="unans"></span></h4>
   
             </div>
+
+            <div class="row"></div>
 
         
       </div>

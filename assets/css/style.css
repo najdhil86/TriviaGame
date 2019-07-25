@@ -3,6 +3,8 @@ body {
     background-color: #fff1c1;
     color: #293462;
     /* height: 50%; */
+    font-family: 'Pragati Narrow', sans-serif;
+
     
 }
 .container {
@@ -66,12 +68,33 @@ body {
   }
 
 
-  #timer, #timeover {
+  #timer, #timeover, #timertext {
 
     font-size: 32px;
     color: #f76262;
   }
 
-  input[type=radio]:focus {
-    border: 3px solid #555;
+
+
+  #timertext {
+    margin-bottom: 40px;
   }
+
+  #timeover {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  #right {
+    color: green;
+  }
+
+  #wrong, #unans {
+    color: #f76262;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  
